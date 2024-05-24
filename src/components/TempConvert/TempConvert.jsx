@@ -18,7 +18,7 @@ const TempConvert = () => {
 
         // Traitement...
         const temp = parseFloat(tempInput);
-        
+
         switch (format) {
             case 'fahrenheit':
                 // Formule : (0 °C × 9/5) + 32 = 32 °F
@@ -38,14 +38,14 @@ const TempConvert = () => {
             <h2>Conversion de temperature</h2>
             <form onSubmit={handleTempSubmit}>
                 <div>
-                    <label>Temperature (°C) : </label>
-                    <input type="number"
+                    <label htmlFor="temp">Temperature (°C) : </label>
+                    <input type="number" id="temp"
                         value={tempInput}
                         onChange={e => setTempInput(e.target.value)} />
                 </div>
                 <div>
-                    <label>Format dest : </label>
-                    <select value={format} onChange={e => setFormat(e.target.value)}>
+                    <label htmlFor="format">Format dest : </label>
+                    <select value={format} id="format" onChange={e => setFormat(e.target.value)}>
                         <option value="fahrenheit">Fahrenheit</option>
                         <option value="kelvin">Kelvin</option>
                     </select>
